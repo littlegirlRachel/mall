@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--开启自动驼峰命名转换 mybatis xml配置文档中有-->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+    </settings>
+    <typeAliases>
+     <!--
+     com.rosa.demo.po.Product ->product
+     com.rosa.demo.po.Brand  ->brand
+     com.rosa.demo.po.Category ->category
+     -->
+        <package name="com.rosa.demo.po"/>
+    </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="helperDialect" value="mysql" />
+        </plugin>
+    </plugins>
+</configuration>
